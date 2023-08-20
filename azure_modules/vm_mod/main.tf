@@ -1,3 +1,12 @@
+resource "random_password" "password" {
+  length      = 20
+  min_lower   = 1
+  min_upper   = 1
+  min_numeric = 1
+  min_special = 1
+  special     = true
+}
+
 resource "azurerm_virtual_network" "my_terraform_network" {
   name                = "myVnet"
   address_space       = ["10.0.0.0/16"]
