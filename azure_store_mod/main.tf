@@ -25,7 +25,7 @@ resource "azurerm_storage_account" "storage_mod" {
   }
 }
 
-module "VM-MOD" {
+module "vm_mod" {
     source = "./azure_modules/vm_mod"
     location            = var.rgrp_location
     resource_group_name = var.resource_grp_name
