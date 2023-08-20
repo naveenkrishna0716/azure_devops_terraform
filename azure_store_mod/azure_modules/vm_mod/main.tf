@@ -69,7 +69,7 @@ resource "azurerm_windows_virtual_machine" "vm" {
     resource_group_name   = var.resource_grp_name  
     location              = var.rgrp_location
     size                  = "Standard_DS1_v2"
-    admin_username        = var.admin_username
+    admin_username        = var.admin_usename
     admin_password        = random_password.password.result
     network_interface_ids = [azurerm_network_interface.my_terraform_nic.id]
     os_disk {
