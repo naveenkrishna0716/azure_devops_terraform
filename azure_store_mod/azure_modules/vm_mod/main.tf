@@ -61,8 +61,6 @@ resource "azurerm_network_interface" "my_terraform_nic" {
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.my_terraform_public_ip.id
   }
-}
-
 
 resource "azurerm_windows_virtual_machine" "vm" {
     name                  = "vm1_windows1"
