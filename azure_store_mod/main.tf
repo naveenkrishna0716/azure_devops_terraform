@@ -47,19 +47,19 @@ resource "azurerm_private_dns_zone_virtual_network_link" "network_link" {
   name                  = "vnet_link1"
   resource_group_name   = var.resource_grp_name
   private_dns_zone_name = azurerm_private_dns_zone.my_prdns.name
-  virtual_network_id    = [module.vm_mod.vnet_id]
+  virtual_network_id    = module.vm_mod.vnet_id
 }
 
 resource "azurerm_private_endpoint" "endpoint" {
   name                = "my_pe1"
   location            = var.rgrp_location
   resource_group_name = var.resource_grp_name
-  subnet_id           = [module.vm_mod.subnet_id2]
+  subnet_id           = module.vm_mod.subnet_id2
 
 
   private_service_connection {
     name                           = "pe_conn1"
-    private_connection_resource_id = azurerm_storage_account.my_storage_account.id #azurerm_private_dns_zone_virtual_network_link.network_link.id
+    private_connection_resource_id = azurerm_storage_account.storage_mod.id 
     is_manual_connection           = false
     subresource_names              = ["blob"]
   }
