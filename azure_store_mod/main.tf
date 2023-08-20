@@ -28,7 +28,7 @@ resource "azurerm_storage_account" "storage_mod" {
 module "vm_mod" {
     source = "./azure_modules/vm_mod"
     location            = var.rgrp_location
-    resource_group_name = var.resource_grp_name
-    admin_username = var.admin_usename
-    storage_account_uri = azurerm_storage_account.storage_mod.primary_blob_endpoint
+    resource_grp_name = var.resource_grp_name
+    admin_usename = var.admin_usename
+    my_storage_account_endpoint = azurerm_storage_account.storage_mod.primary_blob_endpoint
 }
