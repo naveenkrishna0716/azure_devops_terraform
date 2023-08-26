@@ -1,5 +1,5 @@
 resource "random_pet" {
- prefix = var.resource_group_name_prefix
+    prefix = var.resource_group_name_prefix
 }
 
 resource "azurerm_resource_group"  {
