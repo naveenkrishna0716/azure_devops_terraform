@@ -9,7 +9,7 @@ resource "random_password" "password" {
 
 resource "azurerm_virtual_network" "my_terraform_network" {
   name                = "myVnet"
-  address_space       = ["10.0.0.0/16"]
+  address_space       =  ["10.0.0.0/16"]
   location            = var.rgrp_location
   resource_group_name = var.resource_grp_name 
 }
@@ -54,6 +54,7 @@ resource "azurerm_network_interface" "my_terraform_nic" {
   name                = "myNIC"
   location            = var.rgrp_location
   resource_group_name = var.resource_grp_name
+}
 
   ip_configuration {
     name                          = "my_nic_configuration"
