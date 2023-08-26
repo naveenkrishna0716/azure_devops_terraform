@@ -1,13 +1,13 @@
-resource "random_pet" {
+resource "random_pet" "test_rg_pet" {
     prefix = var.resource_group_name_prefix
 }
 
-resource "azurerm_resource_group"  {
+resource "azurerm_resource_group" test_rg_grp" {
     name = var.resource_grp_name
     location = var.rgrp_location
 }
 
-resource "azurerm_storage_account" {
+resource "azurerm_storage_account" "test_sa" {
     name                          = "staccvm5"
     resource_group_name           = var.resource_grp_name
     location                      = var.rgrp_location
