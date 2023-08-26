@@ -7,8 +7,8 @@ resource "azurerm_virtual_network" {
 }
 
 resource "azurerm_subnet" {
-name                 = var.subnet_name
-resource_group_name  = var.resource_rp_name
-virtual_network_name = azurerm_virtual_network.name
-address_prefixes     = ["10.0.1.0/24"]
+  name                 = var.subnet_name
+  resource_group_name  = var.resource_rp_name
+  virtual_network_name = azurerm_virtual_network.name
+  address_prefixes     = ["10.0.1.0/24"]
 }
