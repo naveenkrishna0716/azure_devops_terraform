@@ -20,7 +20,7 @@ resource "azurerm_storage_account" "test_sa" {
 }
 
 module "vnet_mod" {
-    source = "./azure_store_mod/azu_mod/vnet_mod"
+    source = "./vnet_mod"
     vnet_name = "test_vnet"
     rp_location = var.rgrp_location
     resource_rp_name = var.resource_grp_name
