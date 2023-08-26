@@ -9,6 +9,6 @@ resource "azurerm_virtual_network" "test_vrtl" {
 resource "azurerm_subnet" "test_subnet"{
   name                 = var.subnet_name
   resource_group_name  = var.resource_rp_name
-  virtual_network_name = azurerm_virtual_network.name
+  virtual_network_name = azurerm_virtual_network.test_vrtl.name
   address_prefixes     = ["10.0.1.0/24"]
 }
