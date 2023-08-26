@@ -1,4 +1,4 @@
-resource "azurerm_virtual_network" {
+resource "azurerm_virtual_network" "test_vrtl" {
   name                = var.vnet_name
   address_space       = ["10.0.0.0/16"]
   location            = var.rp_location
@@ -6,7 +6,7 @@ resource "azurerm_virtual_network" {
 
 }
 
-resource "azurerm_subnet" {
+resource "azurerm_subnet" "test_subnet"{
   name                 = var.subnet_name
   resource_group_name  = var.resource_rp_name
   virtual_network_name = azurerm_virtual_network.name
