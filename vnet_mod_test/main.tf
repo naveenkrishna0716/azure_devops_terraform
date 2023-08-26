@@ -2,12 +2,12 @@ resource "random_pet" {
  prefix = var.resource_group_name_prefix
 }
 
-resource = "azurerm_resource_group"  {
+resource "azurerm_resource_group"  {
     name = var.resource_grp_name
     location = var.rgrp_location
 }
 
-resource = "azurerm_storage_account" {
+resource "azurerm_storage_account" {
     name                          = "staccvm5"
     resource_group_name           = var.resource_grp_name
     location                      = var.rgrp_location
