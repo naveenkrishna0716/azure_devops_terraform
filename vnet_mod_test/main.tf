@@ -2,7 +2,7 @@ resource "random_pet" "test_rg_pet" {
     prefix = var.resource_group_name_prefix
 }
 
-resource "azurerm_resource_group" test_rg_grp" {
+resource "azurerm_resource_group" "test_rg_grp" {
     name = var.resource_grp_name
     location = var.rgrp_location
 }
