@@ -45,7 +45,7 @@ resource "azurerm_lb" "azure_load_balancer" {
 
   frontend_ip_configuration {
     name                 = "front_end_IP_configuration_for_azure_load_balancer"
-    public_ip_address_id = azurerm_public_ip.azure_load_balancer_IP.id
+    public_ip_address_id = module.vm_tar_mod.public_lb_id
   }
 }
 
