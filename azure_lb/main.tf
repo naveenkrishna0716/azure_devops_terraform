@@ -1,4 +1,3 @@
-
 resource "random_pet" "rg_name" {
   prefix = var.resource_group_name_prefix
 }
@@ -34,7 +33,7 @@ module "vm_tar_mod" {
     source = "./vm_tar_mod"
     rgrp_location            = var.rgrp_location
     resource_grp_name        = var.resource_grp_name
-    admin_usename = var.admin_usename
+    admin_usename            = var.admin_usename
     my_storage_account_endpoint = azurerm_storage_account.storage_mod.primary_blob_endpoint
 }
 
