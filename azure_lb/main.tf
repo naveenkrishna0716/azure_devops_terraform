@@ -50,7 +50,6 @@ resource "azurerm_lb" "azure_load_balancer" {
 }
 
 resource "azurerm_lb_backend_address_pool" "backend_address_pool" {
-  resource_group_name = var.resource_grp_name
   loadbalancer_id     = azurerm_lb.azure_load_balancer.id
   name                = "BackEndAddressPool"
 }
