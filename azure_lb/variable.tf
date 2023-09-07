@@ -1,6 +1,6 @@
 variable "resource_grp_name" {
-    default= "modresourcegrp"
-    type = string
+    default     = "lbrgp"
+    type        = string
     description = "name of the resource group"
 }
 
