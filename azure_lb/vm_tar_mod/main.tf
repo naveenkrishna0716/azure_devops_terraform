@@ -21,28 +21,6 @@ resource "azurerm_subnet" "my_terraform_subnet1" {
   address_prefixes     = ["10.0.1.0/24"]
 }
 
-resource "azurerm_subnet" "my_terraform_subnet2" {
-  name                 = "mySubnet2"
-  resource_group_name  = var.resource_grp_name 
-  virtual_network_name = azurerm_virtual_network.my_terraform_network.name
-  address_prefixes     = ["10.0.2.0/24"]
-  enforce_private_link_endpoint_network_policies = true
-}
-
-resource "azurerm_subnet" "my_terraform_subnet3" {
-  name                 = "mySubnet3"
-  resource_group_name  = var.resource_grp_name 
-  virtual_network_name = azurerm_virtual_network.my_terraform_network.name
-  address_prefixes     = ["10.0.3.0/24"]
-}
-
-resource "azurerm_subnet" "my_terraform_subnet4" {
-  name                 = "mySubnet4"
-  resource_group_name  = var.resource_grp_name 
-  virtual_network_name = azurerm_virtual_network.my_terraform_network.name
-  address_prefixes     = ["10.0.4.0/24"]
-}
-
 resource "azurerm_public_ip" "my_terraform_public_ip" {
   name                = "myPublicIP"
   location            = var.rgrp_location
