@@ -1,0 +1,28 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+
+
+- script: |
+    terraform init
+    terraform plan -out=tfplans
+  displayName: 'Terraform Plan'
+  workingDirectory: $(system.DefaultWorkingDirectory)
+
+- script: |
+    terraform apply -auto-approve tfplan
+    terraform plan -out=tfplans
+  displayName: 'Terraform Apply'
+  workingDirectory: $(system.DefaultWorkingDirectory)
